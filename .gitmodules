@@ -1,0 +1,6 @@
+[submodule "socket/LearnSocket"]
+	path = socket/LearnSocket
+	url = https://github.com/KyleAndKelly/LearnSocket.git
+[submodule "unit_test/Catch2"]
+	path = unit_test/Catch2
+	url = https://github.com/catchorg/Catch2.git
