@@ -45,3 +45,8 @@ inoremap ' ''<LEFT>
 let loaded_matchparen=1
 set matchpairs+=<:>
 
+
+# 解决vim打开文件中文乱码
+set fileencodings=utf-8,gb2312,gbk,gb18030 
+set termencoding=utf-8 
+set encoding=prc 
