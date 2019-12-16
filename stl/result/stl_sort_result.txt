@@ -1,0 +1,66 @@
+1. test stl sort
+99 77 33 66 22 11 44 37 
+------------ sort:
+11 22 33 37 44 66 77 99 
+99 77 66 44 37 33 22 11 
+99 77 11 22 33 44 66 37 
+
+2. test stl  stable sort
+before sort:
+99 77 33 66 22 77 11 44 37 
+after sort:
+11 22 33 37 44 66 77 77 99 
+after sort:
+99 77 77 66 44 37 33 22 11 
+
+3. test stl  partial sort
+before sort:
+22 7 93 45 19 56 88 12 8 7 15 10 
+after sort:
+7 7 8 10 12 93 88 56 45 22 19 15 
+after sort:
+93 88 56 45 22 7 7 8 10 12 19 15 
+
+4. test stl  partial sort
+before sort:
+22 7 93 45 19 56 88 12 8 7 15 10 
+result v2: 
+7 7 8 10 12 
+result v2: 
+7 19 22 45 93 
+result v2: 
+93 88 56 45 22 
+
+5. test stl nth element
+origin data:
+22 7 93 45 19 56 88 12 8 7 15 10 
+after nth element:
+10 7 7 8 12 15 19 22 45 93 88 56 
+
+after nth element:
+56 93 88 45 22 19 10 15 12 8 7 7 
+
+6. test stl is_sorted
+origin data:
+22 7 93 45 19 56 88 12 8 7 15 10 
+not sorted
+
+after nth element:
+7 7 8 10 12 15 19 22 45 56 88 93 
+is sorted
+
+not sorted
+
+7. test stl is_sorted_until
+origin data:
+1 2 3 -1 10 11 30 9 40 42 
+result: 
+1 2 3 
+
+8. test stl merge
+sort v1: 
+1 5 7 9 11 21 39 
+sort v2: 
+3 6 6 8 9 16 17 33 42 
+merge v1, v2 => v3:
+1 3 5 6 6 7 8 9 9 11 16 17 21 33 39 42 
