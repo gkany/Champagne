@@ -1,3 +1,4 @@
+#define BOOST_TEST_DYN_LINK
 #define BOOST_TEST_MODULE maintest
 
 #include <boost/test/unit_test.hpp>
@@ -20,3 +21,5 @@ BOOST_AUTO_TEST_CASE(t_scoped_ptr) {
 
 BOOST_AUTO_TEST_SUITE_END()
 
+
+// g++ smart_ptr_test.cpp -lboost_unit_test_framework 
