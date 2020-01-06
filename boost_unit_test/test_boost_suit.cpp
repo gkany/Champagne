@@ -1,3 +1,4 @@
+#define BOOST_TEST_DYN_LINK
 #define BOOST_TEST_MODULE maintest
  
 #include <boost/test/unit_test.hpp>
@@ -36,3 +37,4 @@ BOOST_AUTO_TEST_CASE(t_shared_ptr)
  
 BOOST_AUTO_TEST_SUITE_END()
 
+// g++ test_boost_suit.cpp -lboost_unit_test_framework 
