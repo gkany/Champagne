@@ -67,6 +67,78 @@ launch.json配置项解释:
 }
 ```
 
+### c_cpp_properties.json
+示例：
+```json
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [                //这里是编译器内的头文件地址，请根据编译器的安装目录填写
+                "${workspaceFolder}/**",
+                "E:\\Compiler\\WinGW\\mingw64\\include\\",
+                "E:\\Compiler\\WinGW\\mingw64\\include\\gdb\\",
+                "E:\\Compiler\\WinGW\\mingw64\\include\\libiberty\\",
+                "E:/Compiler/WinGW/mingw64/lib/",
+                "E:\\Compiler\\WinGW\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\32/",
+                "E:/Compiler/WinGW/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/*",
+                "E:/Compiler/WinGW/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/*",
+                "E:/Compiler/WinGW/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/ssp/*"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "compilerPath":"E:/Compiler/WinGW/mingw64/bin/gcc.exe",            //编译器所在的地址，根据自己编译器所在的位置填写。
+            "browse": {
+                "path": [                                                //这里任然是编译器内的头文件地址
+                    "${workspaceRoot}",
+                    "${MINGW_HOME}\\include\\c++\\7.1.0",
+                    "${MINGW_HOME}\\include\\c++\\7.1.0\\x86_64-w64-mingw32",
+                    "${MINGW_HOME}\\include\\c++\\7.1.0\\backward",
+                    "${MINGW_HOME}\\lib\\gcc\\x86_64-w64-mingw32\\7.1.0\\include",
+                    "${MINGW_HOME}\\include",
+                    "${MINGW_HOME}\\x86_64-w64-mingw32\\include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        }
+    ],
+    "version": 4
+}
+```
+includePath配置问题：
+查找系统中g++可用的include: **gcc -v -E -x c++ -**
+以Mac下为例：
+```text
+localhost:vscode a123$ gcc -v -E -x c++ -
+Using built-in specs.
+COLLECT_GCC=gcc
+Target: x86_64-apple-darwin18
+
+......
+
+Thread model: posix
+gcc version 9.1.0 (MacPorts gcc9 9.1.0_2) 
+
+......
+
+#include "..." search starts here:
+#include <...> search starts here:
+ /opt/local/include/gcc9/c++/
+ /opt/local/include/gcc9/c++//x86_64-apple-darwin18
+ /opt/local/include/gcc9/c++//backward
+ /opt/local/lib/gcc9/gcc/x86_64-apple-darwin18/9.1.0/include
+ /opt/local/lib/gcc9/gcc/x86_64-apple-darwin18/9.1.0/include-fixed
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include
+ /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks
+End of search list.
+```
+
+
 ### setting.json
 示例：
 ```json
@@ -77,6 +149,7 @@ launch.json配置项解释:
     }
 }
 ```
+
 
 附：
 1. [Visual Studio Code (vscode) 配置C、C++环境/编写运行C、C++（Windows](https://blog.csdn.net/bat67/article/details/81268581)
