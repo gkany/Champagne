@@ -37,4 +37,6 @@ MAIL_MAX_EMAILS			None			一次连接中的发送邮件的上限
 MAIL_ASCII_ATTACHMENTS	False			如果 MAIL_ASCII_ATTACHMENTS 设置成 True 的话，文件名将会转换成 ASCII 的。一般用于添加附件。
 ```
 
-转自：https://blog.csdn.net/wbin233/article/details/73222027
+参考:
+1. [Flask 邮件](https://www.w3cschool.cn/flask/flask_mail.html)
+2. [使用Flask-Mail和qq邮箱SMTP服务发送邮件](https://blog.csdn.net/wbin233/article/details/73222027)
